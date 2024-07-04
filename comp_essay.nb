@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[    424401,       9178]
-NotebookOptionsPosition[    418778,       9092]
-NotebookOutlinePosition[    419186,       9108]
-CellTagsIndexPosition[    419143,       9105]
+NotebookDataLength[    455036,       9981]
+NotebookOptionsPosition[    447892,       9876]
+NotebookOutlinePosition[    448298,       9892]
+CellTagsIndexPosition[    448255,       9889]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -7663,45 +7663,14 @@ Cell[BoxData[
 Cell["\<\
 or simply right and up \[OpenCurlyDoubleQuote]moves\[CloseCurlyDoubleQuote]. \
 However, to make this path into a Dyck path, we will have to consider the \
-restriction of the diagonal.\
+restriction of the diagonal. To turn this into a multiway graph, I \
+recursively build the graph by finding the next edge with the rule described \
+above.\
 \>", "Text",
- CellChangeTimes->{{3.9289428818250465`*^9, 
-  3.928942954429405*^9}},ExpressionUUID->"e0e6354a-586b-a74a-a966-\
+ CellChangeTimes->{{3.9289428818250465`*^9, 3.928942954429405*^9}, {
+  3.929115710076832*^9, 
+  3.929115711540863*^9}},ExpressionUUID->"e0e6354a-586b-a74a-a966-\
 aeb2038384e8"],
-
-Cell["\<\
-I opted to store the Dyck path by a list of the heights of the columns. For \
-the example Dyck path above, it would be stored as\
-\>", "Text",
- CellChangeTimes->{{3.928942956816641*^9, 
-  3.9289429874617577`*^9}},ExpressionUUID->"9a58539d-9b8f-9640-9b43-\
-720522118cd9"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "0", ",", " ", "1", ",", " ", "1", ",", " ", "2", ",", " ", "3", ",", " ", 
-   "3", ",", " ", "6"}], "}"}]], "Input",
- CellChangeTimes->{{3.928942989297636*^9, 
-  3.9289430084781017`*^9}},ExpressionUUID->"86e49262-8d00-f64a-9cc1-\
-f873a177129c"],
-
-Cell["\<\
-The 6 at the end is technically not in the graph itself, but makes the \
-conversion graphically, which will be explained later, much less convoluted.\
-\>", "Text",
- CellChangeTimes->{{3.928943014350939*^9, 
-  3.9289430747193947`*^9}},ExpressionUUID->"c73440ae-c1f5-9646-97fe-\
-edb10071c1c9"],
-
-Cell["\<\
-To turn this into a multiway graph, I recursively build the graph by finding \
-the next edge with the rule described above.\
-\>", "Text",
- CellChangeTimes->{{3.928943082469395*^9, 3.9289430942931347`*^9}, {
-  3.928943408789001*^9, 3.9289434181995106`*^9}, {3.929019938625885*^9, 
-  3.9290199951870136`*^9}},ExpressionUUID->"b86be76f-72d9-ba48-b608-\
-06536d4ca0c1"],
 
 Cell[BoxData[
  RowBox[{
@@ -7777,7 +7746,7 @@ Cell[BoxData[
    "]"}]}]], "Code",
  CellChangeTimes->{{3.9290200079655094`*^9, 3.9290200237542343`*^9}, {
   3.9290201703907623`*^9, 3.9290201710907288`*^9}},
- CellLabel->"In[2]:=",ExpressionUUID->"2f80271e-03cc-fc41-b681-c1de45008bf7"],
+ CellLabel->"In[11]:=",ExpressionUUID->"2f80271e-03cc-fc41-b681-c1de45008bf7"],
 
 Cell["\<\
 The which above hard codes the empty set case and the ending case (i.e., all \
@@ -7901,9 +7870,9 @@ Cell[BoxData[
     RowBox[{"GridLines", " ", "->", " ", "Automatic"}], ",", "\n", "\t", 
     RowBox[{"ImageSize", " ", "->", " ", "Full"}]}], "\n", "]"}]}]], "Code",
  CellChangeTimes->{{3.92902029705632*^9, 3.9290204099319744`*^9}, 
-   3.929020856432966*^9, {3.9290208897667046`*^9, 3.9290209174345016`*^9}, {
-   3.9290210829993*^9, 3.9290210968989067`*^9}},
- CellLabel->"In[43]:=",ExpressionUUID->"4c0d5523-c3a0-2746-ba96-424e781f9d07"],
+   3.929020856432966*^9, {3.929020889766704*^9, 3.929020917434501*^9}, {
+   3.9290210829993*^9, 3.929021096898907*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"4c0d5523-c3a0-2746-ba96-424e781f9d07"],
 
 Cell["\<\
 We test this, as well as a function to generate random Dyck Paths below.\
@@ -7933,9 +7902,8 @@ Cell[BoxData[
          RowBox[{"Range", "[", 
           RowBox[{"2", "*", "n"}], "]"}]}], "}"}]}], "\n", "\t\t", "]"}], 
      "\n", "\t", "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Code",
- CellChangeTimes->{{3.9290209971604652`*^9, 
-  3.9290210116276855`*^9}},ExpressionUUID->"07f9c186-b02d-014c-9e33-\
-8f22b36bda52"],
+ CellChangeTimes->{{3.929020997160465*^9, 3.9290210116276855`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"07f9c186-b02d-014c-9e33-8f22b36bda52"],
 
 Cell[CellGroupData[{
 
@@ -8000,9 +7968,8 @@ Cell[BoxData[
     "\n", "\t", 
     RowBox[{"ImageSize", " ", "->", " ", "15"}]}], "\n", "]"}]}]], "Code",
  CellChangeTimes->{{3.9290211767057095`*^9, 3.929021185064747*^9}, {
-  3.929023272789711*^9, 
-  3.9290232793602695`*^9}},ExpressionUUID->"257a849a-52e7-6a4c-be73-\
-0d9a06890176"],
+  3.929023272789711*^9, 3.929023279360269*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"257a849a-52e7-6a4c-be73-0d9a06890176"],
 
 Cell["\<\
 Now, to actually create the multiway system, we utilize the function \
@@ -8075,10 +8042,9 @@ Cell[BoxData[
          RowBox[{"dyckGraph", "[", 
           RowBox[{"#2", ",", " ", "n"}], "]"}], ",", " ", "#1"}], "]"}], 
        "&"}], ")"}]}]}], "\n", "]"}]}]], "Code",
- CellChangeTimes->{{3.9290206424650764`*^9, 3.9290206968801384`*^9}, {
-  3.9290212275719833`*^9, 
-  3.9290212285942783`*^9}},ExpressionUUID->"99b42ff3-daba-e448-97e3-\
-bb186293f452"],
+ CellChangeTimes->{{3.929020642465077*^9, 3.9290206968801384`*^9}, {
+  3.929021227571984*^9, 3.929021228594279*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"99b42ff3-daba-e448-97e3-bb186293f452"],
 
 Cell["\<\
 and we can call it below to generate a sample Dyck path multiway system.\
@@ -9086,12 +9052,830 @@ Cell[BoxData[
   FrameTicks->None]], "Output",
  CellChangeTimes->{{3.929021274110174*^9, 3.92902130171838*^9}},
  CellLabel->"Out[51]=",ExpressionUUID->"5b7a770a-9ca7-3147-b6de-275a311fc8d7"]
-}, Open  ]]
+}, Open  ]],
+
+Cell["insert sliding visual here", "Text",
+ CellChangeTimes->{{3.929108386977541*^9, 
+  3.929108394832903*^9}},ExpressionUUID->"f709829b-7370-e145-a692-\
+7f1380559fd1"],
+
+Cell[TextData[{
+ "It is well known that the number of Dyck paths for a ",
+ StyleBox["n", "Code"],
+ "\[Times]",
+ StyleBox["n", "Code"],
+ "-grid is equivalent to the ",
+ StyleBox["n", "Code"],
+ "-th Catalan number. One visualization of the proof can be shown as such \
+(proof rewritten from Stack Exchange)."
+}], "Text",
+ CellChangeTimes->{{3.9291084089302177`*^9, 3.9291084359023647`*^9}, {
+  3.9291084669465675`*^9, 3.9291085349025803`*^9}, {3.9291085664881783`*^9, 
+  3.929108574633749*^9}, {3.929108623015491*^9, 3.929108624334684*^9}, {
+  3.929115862151018*^9, 
+  3.9291158859912033`*^9}},ExpressionUUID->"328bc600-29d5-e548-87fb-\
+fa4dfed3b31b"],
+
+Cell[TextData[{
+ "Claim: The number of Dyck paths for a ",
+ StyleBox["n", "Code"],
+ "\[Times]",
+ StyleBox["n", "Code"],
+ "-grid is equivalent to ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["C", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7607d297-5311-ef44-a48e-c1a4905e4def"],
+ ", where "
+}], "Text",
+ CellChangeTimes->{{3.929108627374569*^9, 3.929108744301695*^9}, {
+   3.929108901369755*^9, 3.9291089289201946`*^9}, 
+   3.929108961701689*^9},ExpressionUUID->"32930058-11ad-0448-9e2a-\
+bd94ab51dc25"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["C", "0"], "=", "1"}], ",", " ", 
+  RowBox[{
+   SubscriptBox["C", "n"], "=", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "1"}], "n"], 
+    RowBox[{
+     SubscriptBox["C", 
+      RowBox[{"k", "-", "1"}]], 
+     SubscriptBox["C", 
+      RowBox[{"n", "-", "k"}]]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.929108757693653*^9, 3.9291087740247574`*^9}, {
+  3.929108885526008*^9, 3.9291089584259605`*^9}, {3.929109034600448*^9, 
+  3.929109034807804*^9}, {3.92910943363211*^9, 3.92910943388845*^9}, {
+  3.929115505819622*^9, 
+  3.9291155100864983`*^9}},ExpressionUUID->"5c9cf693-1f04-8c45-b143-\
+9c9db5336e1b"],
+
+Cell[TextData[{
+ "Proof: Let the first time the path touches the diagonal be at ",
+ StyleBox["(k, k)", "Code"],
+ ", and we know that it must, as at the very least, the Dyck path will end at \
+",
+ StyleBox["(n, n)", "Code"],
+ ". Then, if we consider the first part (part in green), we can see that if \
+we were to draw the line y=x-1, we would effectively get a Dyck path below on \
+a ",
+ StyleBox["k-1", "Code"],
+ "\[Times]",
+ StyleBox["k-1", "Code"],
+ "-grid, since it is the first time that it intersects with the line. On the \
+other side, we would end up with an ",
+ StyleBox["n-k", "Code"],
+ "\[Times]",
+ StyleBox["n-k", "Code"],
+ "-grid (highlighted in purple). As a result, by considering every possible \
+value of k, from ",
+ StyleBox["k=1", "Code"],
+ " to ",
+ StyleBox["k=n", "Code"],
+ ", we can split into the sum of two Catalan numbers ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "k"], " ", "and", " ", 
+    SubscriptBox["C", 
+     RowBox[{"n", "-", "k"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c650caae-0de9-d646-a385-db196c222528"],
+ ", which gets us our desired summation above."
+}], "Text",
+ CellChangeTimes->{{3.9291089915316124`*^9, 3.929108994444521*^9}, {
+  3.9291098002150936`*^9, 3.929109854627287*^9}, {3.9291099828708897`*^9, 
+  3.9291100783444443`*^9}, {3.929112061115984*^9, 
+  3.9291122324003887`*^9}},ExpressionUUID->"55174b32-b354-c54d-bb6b-\
+dbd617b211f6"],
+
+Cell["\<\
+To get an interactive visualization, we need to create a few functions, as \
+well as updating a few old ones (explanation later), in preparation for the \
+next section.\
+\>", "Text",
+ CellChangeTimes->{{3.929115008046747*^9, 3.9291150694213142`*^9}, {
+  3.9291160942820663`*^9, 3.9291160974112873`*^9}, {3.9291164583145657`*^9, 
+  3.929116459350275*^9}},ExpressionUUID->"1f61d8f1-f208-7f41-8246-\
+4e6315f13445"],
+
+Cell["Updated functions:", "Text",
+ CellChangeTimes->{{3.9291164518602962`*^9, 
+  3.9291164625361805`*^9}},ExpressionUUID->"1cae33c3-d9c1-8e4d-b29c-\
+e2ea713d0bc6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dyckNext", "[", 
+   RowBox[{"lst_List", ",", " ", "n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", "y"}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"x", " ", "=", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", "lst", "]"}], " ", "!=", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Last", "[", "lst", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", " ", "0"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"y", " ", "=", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", "lst", "]"}], " ", "!=", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Last", "[", "lst", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{"x", "==", "n"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", 
+            RowBox[{"y", " ", "+", " ", "1"}]}], "}"}]}], "}"}], "}"}], ",", 
+       " ", "\n", "\t", "True", ",", " ", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", " ", "+", " ", "1"}], ",", " ", "y"}], "}"}]}], 
+            "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", 
+               RowBox[{"y", " ", "+", " ", "1"}]}], "}"}]}], "}"}]}], "}"}], 
+         ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "<=", 
+            RowBox[{"resCol", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", "1"}], "]"}], 
+             "]"}]}], " ", "&&", " ", 
+           RowBox[{"!", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"badEdges", ",", " ", "#"}], "]"}]}]}], "&"}]}], "]"}]}],
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"generateDyckPath", "[", 
+   RowBox[{"n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", "  ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lst", " ", "=", " ", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"Last", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"lst", ",", " ", 
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"dyckNext", "[", 
+           RowBox[{
+           "lst", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+           "]"}], "]"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", 
+         RowBox[{"Range", "[", 
+          RowBox[{"2", "*", "n"}], "]"}]}], "}"}]}], "]"}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"dyckGraph", "[", 
+   RowBox[{"lst_List", ",", " ", "n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Blue", ",", " ", 
+      RowBox[{"Arrow", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Partition", "[", 
+        RowBox[{
+         RowBox[{"Flatten", "[", 
+          RowBox[{"lst", ",", " ", "1"}], "]"}], ",", " ", "2"}], "]"}], 
+       "]"}], ",", " ", "\n", "\t", "Red", ",", " ", "Dashed", ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Line", "[", "#", "]"}], " ", "&"}], " ", "/@", " ", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+             RowBox[{"resCol", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", " ", 
+             RowBox[{"resCol", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", " ", "+", " ", "1"}], "]"}], "]"}]}], "}"}]}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", 
+           RowBox[{"Range", "[", "n", "]"}]}], "}"}]}], "]"}]}], ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Line", "[", "#", "]"}], " ", "&"}], " ", "/@", " ", 
+       "badEdges"}]}], "}"}], ",", " ", "\n", "\t", 
+    RowBox[{"GridLines", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}], ",", " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}]}], "}"}]}], ",", " ", 
+    RowBox[{"ImageSize", "->", "15"}]}], "\n", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"showGraph", "[", 
+   RowBox[{"graphs_List", ",", " ", "level_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", " ", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", ":", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", 
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\"\<MultiwaySystem\>\"", "]"}], "[", 
+   "\n", "\t", 
+   RowBox[{
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"\"\<StateEvolutionFunction\>\"", " ", "->", " ", 
+       RowBox[{"Function", "[", 
+        RowBox[{"list", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{"list", ",", " ", "#"}], "]"}], " ", "&"}], " ", "/@", 
+          " ", 
+          RowBox[{"dyckNext", "[", 
+           RowBox[{
+           "list", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+           "]"}]}]}], "]"}]}], ",", "\n", "\t", 
+      RowBox[{"\"\<StateEquivalenceFunction\>\"", "->", "SameQ"}], ",", 
+      InterpretationBox[
+       DynamicModuleBox[{Typeset`open = False}, 
+        TemplateBox[{"Expression", 
+          StyleBox[
+          "\"Options\"", "IconizedCustomName", StripOnInput -> False], 
+          GridBox[{{
+             ItemBox[
+              RowBox[{
+                TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["Sequence", "IconizedItem"]}]]}, {
+             ItemBox[
+              RowBox[{
+                TagBox["\"Length: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["5", "IconizedItem"]}]]}, {
+             ItemBox[
+              RowBox[{
+                TagBox["\"Byte count: \"", "IconizedLabel"], 
+                "\[InvisibleSpace]", 
+                TagBox["640", "IconizedItem"]}]]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+           "Column", 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          Dynamic[Typeset`open]},
+         "IconizedObject"]],
+       Sequence[
+       "StateEventFunction" -> Identity, "EventDecompositionFunction" -> 
+        Identity, "EventApplicationFunction" -> Identity, "SystemType" -> 
+        "None", "EventSelectionFunction" -> Identity],
+       SelectWithContents->True,
+       Selectable->False]}], "|>"}], ",", "\n", "\t", 
+    RowBox[{"{", "graphs", "}"}], ",", "level", ",", "\"\<StatesGraph\>\"", 
+    ",", "\n", "\t", 
+    RowBox[{"\"\<StateRenderingFunction\>\"", "->", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Inset", "[", 
+        RowBox[{
+         RowBox[{"dyckGraph", "[", 
+          RowBox[{
+          "#2", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+          "]"}], ",", " ", "#1"}], "]"}], "&"}], ")"}]}]}], "\n", 
+   "]"}]}]}], "Code",
+ CellChangeTimes->{
+  3.929116465155945*^9},ExpressionUUID->"213d087b-ebe1-ef46-8ea5-\
+1ba67be7a135"],
+
+Cell["New functions:", "Text",
+ CellChangeTimes->{{3.929115457705391*^9, 
+  3.9291154591768894`*^9}},ExpressionUUID->"d69e52bd-f68a-2342-8f37-\
+114a79d255df"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dyckGraphVis", "[", 
+   RowBox[{"lst_List", ",", " ", "n_Integer", ",", " ", "k_Integer"}], "]"}], 
+  " ", ":=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Blue", ",", " ", 
+      RowBox[{"Arrow", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Partition", "[", 
+        RowBox[{
+         RowBox[{"Flatten", "[", 
+          RowBox[{"lst", ",", " ", "1"}], "]"}], ",", " ", "2"}], "]"}], 
+       "]"}], ",", " ", "\n", "\t", "Purple", ",", " ", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Partition", "[", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{"lst", ",", " ", "1"}], "]"}], ",", "2"}], "]"}], ",", 
+         " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", ">=", " ", "k"}], " ", 
+          "&"}]}], "]"}], " ", "\n", "\t", "]"}], ",", " ", "\n", "\t", 
+      "Green", ",", " ", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Partition", "[", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Flatten", "[", 
+            RowBox[{"lst", ",", " ", "1"}], "]"}], ",", "2"}], "]"}], ",", 
+         " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"k", " ", ">=", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", ">", " ", "1"}], "&&", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "<", "k"}]}], "&"}]}], "]"}], 
+       "\n", "\t", "]"}], ",", "\n", "\t", "Red", ",", " ", "Dashed", ",", 
+      " ", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", " ", "n"}], "}"}]}], "}"}], "]"}], ",", " ", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", "0"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", " ", 
+           RowBox[{"k", " ", "-", " ", "1"}]}], "}"}]}], "}"}], "]"}]}], 
+     "}"}], ",", " ", "\n", "\t", 
+    RowBox[{"GridLines", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}], ",", " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}]}], "}"}]}], ",", " ", 
+    RowBox[{"ImageSize", "->", "Medium"}]}], "\n", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"genVisPath", "[", 
+   RowBox[{"n_Integer", ",", " ", "k_Integer"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lst", " ", "=", " ", 
+      RowBox[{"generateDyckPath", "[", 
+       RowBox[{"k", ",", " ", 
+        RowBox[{"Range", "[", 
+         RowBox[{"0", ",", " ", "k"}], "]"}], ",", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"i", ",", " ", 
+              RowBox[{"i", "-", "1"}]}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", " ", "i"}], "}"}]}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", " ", 
+            RowBox[{"Range", "[", 
+             RowBox[{"k", "-", "1"}], "]"}]}], "}"}]}], "]"}]}], "]"}]}], 
+     "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"n", "!=", "k"}], ",", " ", 
+      RowBox[{"Last", "[", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"lst", ",", " ", 
+           RowBox[{"RandomChoice", "[", 
+            RowBox[{"dyckNext", "[", 
+             RowBox[{"lst", ",", " ", "n"}], "]"}], "]"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", 
+           RowBox[{"Range", "[", 
+            RowBox[{"2", "*", 
+             RowBox[{"(", 
+              RowBox[{"n", "-", "k"}], ")"}]}], "]"}]}], "}"}]}], "]"}], 
+       "]"}], ",", " ", "lst"}], "]"}]}], "\[IndentingNewLine]", 
+   "]"}]}]}], "Code",
+ CellChangeTimes->{{3.9291153473135185`*^9, 3.9291154267035065`*^9}, {
+  3.929115960803831*^9, 3.929115962351618*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"d08dd3d1-49ee-fc4b-a611-1bbdcc0cbe7e"],
+
+Cell[TextData[{
+ "Now for a visualization of the recursive proof for the case of ",
+ StyleBox["n = 6", "Code"],
+ " (and yes, there are degenerate cases for ",
+ StyleBox["n - k", "Code"],
+ " and ",
+ StyleBox["k", "Code"],
+ ", meaning one of them is equal to ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["C", "0"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8a26bf11-7d2c-a44d-b7d7-f24a53d0cfd3"],
+ ")"
+}], "Text",
+ CellChangeTimes->{{3.9291154627558537`*^9, 3.9291155005632725`*^9}, {
+  3.929115906468807*^9, 
+  3.9291159302464104`*^9}},ExpressionUUID->"5617f3bb-527f-b642-9182-\
+648a70c525a5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"ListAnimate", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"dyckGraphVis", "[", 
+       RowBox[{
+        RowBox[{"genVisPath", "[", 
+         RowBox[{"n", ",", " ", "k"}], "]"}], ",", " ", "n", ",", " ", "k"}], 
+       "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", " ", 
+        RowBox[{"Range", "[", "n", "]"}]}], "}"}]}], "]"}], ",", " ", 
+    RowBox[{"AnimationRunning", "->", "False"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9291157496073*^9, 3.9291157564372215`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"fd3105b5-f812-be48-b877-8b6af42002c8"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   ListAnimate[
+    Table[
+     $CellContext`dyckGraphVis[
+      $CellContext`genVisPath[$CellContext`n, $CellContext`k], \
+$CellContext`n, $CellContext`k], {$CellContext`k, 
+      Range[$CellContext`n]}], AnimationRunning -> False], StandardForm],
+  ImageSizeCache->{835., {198.634033203125, 204.365966796875}}]], "Output",
+ CellChangeTimes->{{3.929115591722025*^9, 3.929115592267868*^9}, 
+   3.929115757128519*^9, 3.929116008497774*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"121778b7-2bf8-be4a-a425-2fc04513aee4"]
+}, Open  ]],
+
+Cell["\<\
+There is proof for the Catalan numbers iteratively involving generating \
+functions, which will be explained briefly here as well.\
+\>", "Text",
+ CellChangeTimes->{{3.929116360198576*^9, 
+  3.929116412535946*^9}},ExpressionUUID->"06f0be3e-6770-0647-8594-\
+cdd678f9a198"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Modifications", "Subsubsection",
+ CellChangeTimes->{{3.9291160623796883`*^9, 
+  3.9291160667423496`*^9}},ExpressionUUID->"a24bf174-19fb-7e4d-a4ba-\
+91c3d193862e"],
+
+Cell["\<\
+Now, we seek to explore modified Dyck graphs and analyze the changes in \
+behavior and number of paths. For example, what happens when our restriction \
+isn\[CloseCurlyQuote]t just a diagonal? What happens if we want to prevent \
+paths from passing a specific edge? What would happen if we didn\
+\[CloseCurlyQuote]t have to strictly travel right or up?\
+\>", "Text",
+ CellChangeTimes->{{3.929116117334547*^9, 
+  3.929116269214033*^9}},ExpressionUUID->"6ab4bfd4-d2c5-2c42-bb8b-\
+ac58a6edc6bb"],
+
+Cell["Once again, here is the list of updated functions.", "Text",
+ CellChangeTimes->{{3.9291164308868675`*^9, 
+  3.9291164473643055`*^9}},ExpressionUUID->"3ffcee30-b740-6c47-b4e6-\
+45f2c1ae5323"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dyckNext", "[", 
+   RowBox[{"lst_List", ",", " ", "n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", "y"}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"x", " ", "=", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", "lst", "]"}], " ", "!=", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Last", "[", "lst", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", " ", "0"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"y", " ", "=", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", "lst", "]"}], " ", "!=", " ", "0"}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Last", "[", "lst", "]"}], "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], ",", " ", "0"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", 
+      RowBox[{
+       RowBox[{"x", "==", "n"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", " ", 
+            RowBox[{"y", " ", "+", " ", "1"}]}], "}"}]}], "}"}], "}"}], ",", 
+       " ", "\n", "\t", "True", ",", " ", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", " ", "+", " ", "1"}], ",", " ", "y"}], "}"}]}], 
+            "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", "y"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", " ", 
+               RowBox[{"y", " ", "+", " ", "1"}]}], "}"}]}], "}"}]}], "}"}], 
+         ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "<=", 
+            RowBox[{"resCol", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", "1"}], "]"}], 
+             "]"}]}], " ", "&&", " ", 
+           RowBox[{"!", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{"badEdges", ",", " ", "#"}], "]"}]}]}], "&"}]}], "]"}]}],
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"generateDyckPath", "[", 
+   RowBox[{"n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", "  ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lst", " ", "=", " ", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{"Last", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"lst", ",", " ", 
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"dyckNext", "[", 
+           RowBox[{
+           "lst", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+           "]"}], "]"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", 
+         RowBox[{"Range", "[", 
+          RowBox[{"2", "*", "n"}], "]"}]}], "}"}]}], "]"}], "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"dyckGraph", "[", 
+   RowBox[{"lst_List", ",", " ", "n_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", " ", ":", " ", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Blue", ",", " ", 
+      RowBox[{"Arrow", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Partition", "[", 
+        RowBox[{
+         RowBox[{"Flatten", "[", 
+          RowBox[{"lst", ",", " ", "1"}], "]"}], ",", " ", "2"}], "]"}], 
+       "]"}], ",", " ", "\n", "\t", "Red", ",", " ", "Dashed", ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Line", "[", "#", "]"}], " ", "&"}], " ", "/@", " ", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"i", " ", "-", " ", "1"}], ",", " ", 
+             RowBox[{"resCol", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", " ", 
+             RowBox[{"resCol", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", " ", "+", " ", "1"}], "]"}], "]"}]}], "}"}]}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", " ", 
+           RowBox[{"Range", "[", "n", "]"}]}], "}"}]}], "]"}]}], ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Line", "[", "#", "]"}], " ", "&"}], " ", "/@", " ", 
+       "badEdges"}]}], "}"}], ",", " ", "\n", "\t", 
+    RowBox[{"GridLines", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}], ",", " ", 
+       RowBox[{"Range", "[", 
+        RowBox[{"0", ",", "n", ",", " ", "1"}], "]"}]}], "}"}]}], ",", " ", 
+    RowBox[{"ImageSize", "->", "15"}]}], "\n", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"showGraph", "[", 
+   RowBox[{"graphs_List", ",", " ", "level_Integer", ",", " ", 
+    RowBox[{"resCol_List", ":", " ", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", " ", "10"}], "]"}]}], ",", " ", 
+    RowBox[{"badEdges_List", ":", 
+     RowBox[{"{", "}"}]}]}], "]"}], " ", ":=", 
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\"\<MultiwaySystem\>\"", "]"}], "[", 
+   "\n", "\t", 
+   RowBox[{
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"\"\<StateEvolutionFunction\>\"", " ", "->", " ", 
+       RowBox[{"Function", "[", 
+        RowBox[{"list", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{"list", ",", " ", "#"}], "]"}], " ", "&"}], " ", "/@", 
+          " ", 
+          RowBox[{"dyckNext", "[", 
+           RowBox[{
+           "list", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+           "]"}]}]}], "]"}]}], ",", "\n", "\t", 
+      RowBox[{"\"\<StateEquivalenceFunction\>\"", "->", "SameQ"}], ",", 
+      InterpretationBox[
+       DynamicModuleBox[{Typeset`open = False}, 
+        TemplateBox[{"Expression", 
+          StyleBox[
+          "\"Options\"", "IconizedCustomName", StripOnInput -> False], 
+          GridBox[{{
+             ItemBox[
+              RowBox[{
+                TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["Sequence", "IconizedItem"]}]]}, {
+             ItemBox[
+              RowBox[{
+                TagBox["\"Length: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+                TagBox["5", "IconizedItem"]}]]}, {
+             ItemBox[
+              RowBox[{
+                TagBox["\"Byte count: \"", "IconizedLabel"], 
+                "\[InvisibleSpace]", 
+                TagBox["640", "IconizedItem"]}]]}}, 
+           GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+           "Column", 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+          Dynamic[Typeset`open]},
+         "IconizedObject"]],
+       Sequence[
+       "StateEventFunction" -> Identity, "EventDecompositionFunction" -> 
+        Identity, "EventApplicationFunction" -> Identity, "SystemType" -> 
+        "None", "EventSelectionFunction" -> Identity],
+       SelectWithContents->True,
+       Selectable->False]}], "|>"}], ",", "\n", "\t", 
+    RowBox[{"{", "graphs", "}"}], ",", "level", ",", "\"\<StatesGraph\>\"", 
+    ",", "\n", "\t", 
+    RowBox[{"\"\<StateRenderingFunction\>\"", "->", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Inset", "[", 
+        RowBox[{
+         RowBox[{"dyckGraph", "[", 
+          RowBox[{
+          "#2", ",", " ", "n", ",", " ", "resCol", ",", " ", "badEdges"}], 
+          "]"}], ",", " ", "#1"}], "]"}], "&"}], ")"}]}]}], "\n", 
+   "]"}]}]}], "Code",
+ CellChangeTimes->{
+  3.9291161083275433`*^9},ExpressionUUID->"b1be6a29-f97e-7f49-897e-\
+4a99298f7791"],
+
+Cell["The functions above were used", "Text",
+ CellChangeTimes->{{3.9291162749300137`*^9, 
+  3.9291162791161385`*^9}},ExpressionUUID->"7bdc830d-5fcc-7f44-b61a-\
+f6fdf40fa355"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{571, 418},
-WindowMargins->{{Automatic, 170.5}, {-11.5, Automatic}},
+WindowSize->{960, 472},
+WindowMargins->{{-5.5, Automatic}, {Automatic, -5.5}},
 FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 16, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"d5800f92-8247-1546-b192-5101be4b315a"
@@ -9111,35 +9895,35 @@ Cell[CellGroupData[{
 Cell[583, 22, 170, 3, 67, "Section",ExpressionUUID->"a7c4718f-fd51-3540-b1a2-e2c56d8229ec"],
 Cell[CellGroupData[{
 Cell[778, 29, 163, 3, 45, "Subsubsection",ExpressionUUID->"620242d3-e5a2-a64c-b50a-4e016318b4c2"],
-Cell[944, 34, 359, 7, 58, "Text",ExpressionUUID->"512388a7-709d-f142-aa6d-c800a6df10f9"]
+Cell[944, 34, 359, 7, 35, "Text",ExpressionUUID->"512388a7-709d-f142-aa6d-c800a6df10f9"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1340, 46, 165, 3, 45, "Subsubsection",ExpressionUUID->"f4ac90d8-c69c-834d-8fdf-14d6c20fd5a7"],
-Cell[1508, 51, 334, 7, 58, "Text",ExpressionUUID->"46c8351e-6bec-9945-94e0-287f120bf52f"],
+Cell[1508, 51, 334, 7, 35, "Text",ExpressionUUID->"46c8351e-6bec-9945-94e0-287f120bf52f"],
 Cell[1845, 60, 173, 3, 35, "Text",ExpressionUUID->"c1c0bab5-f31d-1248-b3f4-7db38667b7ca"],
 Cell[2021, 65, 330, 8, 28, "Input",ExpressionUUID->"9db91427-8fe5-b341-a8d4-25a5d48dccc3"],
-Cell[2354, 75, 262, 6, 58, "Text",ExpressionUUID->"c00e3fd1-7d0d-c04d-88f4-970f28aea532"],
+Cell[2354, 75, 262, 6, 35, "Text",ExpressionUUID->"c00e3fd1-7d0d-c04d-88f4-970f28aea532"],
 Cell[CellGroupData[{
-Cell[2641, 85, 1494, 36, 124, "Input",ExpressionUUID->"fd991ea3-ac92-8849-b5b7-42923b22b3db",
+Cell[2641, 85, 1494, 36, 48, "Input",ExpressionUUID->"fd991ea3-ac92-8849-b5b7-42923b22b3db",
  CellID->1482589947],
 Cell[4138, 123, 19048, 433, 449, "Output",ExpressionUUID->"ca66cb2d-dc6d-4b4a-b6bc-21172f0c2f0a"]
 }, Open  ]],
-Cell[23201, 559, 611, 13, 150, "Text",ExpressionUUID->"e057fd13-b220-c94b-a4db-4fe9209cd5e9"],
+Cell[23201, 559, 611, 13, 104, "Text",ExpressionUUID->"e057fd13-b220-c94b-a4db-4fe9209cd5e9"],
 Cell[23815, 574, 278, 8, 28, "Input",ExpressionUUID->"52b62097-9912-534d-afd8-d075074cf589"],
-Cell[24096, 584, 439, 9, 81, "Text",ExpressionUUID->"faca92e9-40f1-284f-8e1f-b7c659e11e6d"],
+Cell[24096, 584, 439, 9, 58, "Text",ExpressionUUID->"faca92e9-40f1-284f-8e1f-b7c659e11e6d"],
 Cell[CellGroupData[{
-Cell[24560, 597, 827, 21, 67, "Input",ExpressionUUID->"1ff0bc76-4276-084c-becf-3b8829040914"],
+Cell[24560, 597, 827, 21, 48, "Input",ExpressionUUID->"1ff0bc76-4276-084c-becf-3b8829040914"],
 Cell[25390, 620, 308070, 6537, 449, "Output",ExpressionUUID->"6027715f-114f-5e4f-aea4-a0bf98c9b3d7"]
 }, Open  ]],
 Cell[333475, 7160, 185, 3, 35, "Text",ExpressionUUID->"15ac5f2e-8a80-a94a-b95c-528ae65620e1"],
 Cell[CellGroupData[{
-Cell[333685, 7167, 1037, 29, 124, "Input",ExpressionUUID->"3cf90f29-d7bc-bf40-8bc9-f970b135621e"],
+Cell[333685, 7167, 1037, 29, 48, "Input",ExpressionUUID->"3cf90f29-d7bc-bf40-8bc9-f970b135621e"],
 Cell[334725, 7198, 15162, 347, 449, "Output",ExpressionUUID->"c5a58b90-9d2a-a14b-9a0a-375ca7c6958a"]
 }, Open  ]],
 Cell[349902, 7548, 156, 3, 35, "Text",ExpressionUUID->"30844c23-952e-b548-a0cc-ddf45737266e"],
 Cell[350061, 7553, 753, 18, 31, "Input",ExpressionUUID->"a59764df-16d1-504c-962e-59b40f8539ff"],
 Cell[350817, 7573, 621, 15, 29, "Input",ExpressionUUID->"eca20153-14bb-6646-8fa2-4a30365b1821"],
-Cell[351441, 7590, 444, 12, 58, "Text",ExpressionUUID->"125256a2-1118-fe4d-97d7-55122e063e49"]
+Cell[351441, 7590, 444, 12, 35, "Text",ExpressionUUID->"125256a2-1118-fe4d-97d7-55122e063e49"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[351922, 7607, 163, 3, 45, "Subsubsection",ExpressionUUID->"ca28da5b-6423-3749-96c8-4488a8151fc6"],
@@ -9147,37 +9931,56 @@ Cell[352088, 7612, 521, 14, 58, "Text",ExpressionUUID->"b8d5d589-e680-7d4e-a860-
 Cell[352612, 7628, 488, 10, 378, "Input",ExpressionUUID->"9a4821cb-ca88-f343-a527-13290adefc9b"],
 Cell[353103, 7640, 248, 4, 35, "Text",ExpressionUUID->"36894947-e804-a14e-b60f-50a7c169ddbf"],
 Cell[353354, 7646, 454, 14, 28, "Input",ExpressionUUID->"18726d7c-66b7-004c-a821-64ac1d5548e2"],
-Cell[353811, 7662, 335, 7, 58, "Text",ExpressionUUID->"e0e6354a-586b-a74a-a966-aeb2038384e8"],
-Cell[354149, 7671, 280, 6, 58, "Text",ExpressionUUID->"9a58539d-9b8f-9640-9b43-720522118cd9"],
-Cell[354432, 7679, 287, 7, 28, "Input",ExpressionUUID->"86e49262-8d00-f64a-9cc1-f873a177129c"],
-Cell[354722, 7688, 301, 6, 81, "Text",ExpressionUUID->"c73440ae-c1f5-9646-97fe-edb10071c1c9"],
-Cell[355026, 7696, 374, 7, 58, "Text",ExpressionUUID->"b86be76f-72d9-ba48-b608-06536d4ca0c1"],
-Cell[355403, 7705, 2692, 74, 173, "Code",ExpressionUUID->"2f80271e-03cc-fc41-b681-c1de45008bf7"],
-Cell[358098, 7781, 338, 7, 81, "Text",ExpressionUUID->"ef9e8702-8f86-9944-ad9f-dd3e2870806e"],
+Cell[353811, 7662, 510, 10, 58, "Text",ExpressionUUID->"e0e6354a-586b-a74a-a966-aeb2038384e8"],
+Cell[354324, 7674, 2693, 74, 173, "Code",ExpressionUUID->"2f80271e-03cc-fc41-b681-c1de45008bf7"],
+Cell[357020, 7750, 338, 7, 58, "Text",ExpressionUUID->"ef9e8702-8f86-9944-ad9f-dd3e2870806e"],
 Cell[CellGroupData[{
-Cell[358461, 7792, 1046, 32, 67, "Input",ExpressionUUID->"ff7540d1-b823-c442-a5bd-6f4b8d4557e7"],
-Cell[359510, 7826, 372, 10, 32, "Output",ExpressionUUID->"ec93c238-33cf-a944-adec-aadac8530165"],
-Cell[359885, 7838, 556, 17, 32, "Output",ExpressionUUID->"57cffea6-1659-6f49-a6f2-e7f694f4dfb6"],
-Cell[360444, 7857, 374, 10, 32, "Output",ExpressionUUID->"5e01c389-7d6d-0942-9088-cfe7de037368"]
+Cell[357383, 7761, 1046, 32, 67, "Input",ExpressionUUID->"ff7540d1-b823-c442-a5bd-6f4b8d4557e7"],
+Cell[358432, 7795, 372, 10, 32, "Output",ExpressionUUID->"ec93c238-33cf-a944-adec-aadac8530165"],
+Cell[358807, 7807, 556, 17, 32, "Output",ExpressionUUID->"57cffea6-1659-6f49-a6f2-e7f694f4dfb6"],
+Cell[359366, 7826, 374, 10, 32, "Output",ExpressionUUID->"5e01c389-7d6d-0942-9088-cfe7de037368"]
 }, Open  ]],
-Cell[360833, 7870, 222, 5, 35, "Text",ExpressionUUID->"609ecbfd-dbe0-3040-be9c-0fa6a12c7c31"],
-Cell[361058, 7877, 1253, 28, 156, "Code",ExpressionUUID->"4c0d5523-c3a0-2746-ba96-424e781f9d07"],
-Cell[362314, 7907, 226, 5, 35, "Text",ExpressionUUID->"80d38add-0aa2-da43-b8e4-89a473c8b595"],
-Cell[362543, 7914, 932, 23, 156, "Code",ExpressionUUID->"07f9c186-b02d-014c-9e33-8f22b36bda52"],
+Cell[359755, 7839, 222, 5, 35, "Text",ExpressionUUID->"609ecbfd-dbe0-3040-be9c-0fa6a12c7c31"],
+Cell[359980, 7846, 1247, 28, 156, "Code",ExpressionUUID->"4c0d5523-c3a0-2746-ba96-424e781f9d07"],
+Cell[361230, 7876, 226, 5, 35, "Text",ExpressionUUID->"80d38add-0aa2-da43-b8e4-89a473c8b595"],
+Cell[361459, 7883, 949, 22, 156, "Code",ExpressionUUID->"07f9c186-b02d-014c-9e33-8f22b36bda52"],
 Cell[CellGroupData[{
-Cell[363500, 7941, 286, 6, 28, "Input",ExpressionUUID->"f1706719-f988-c747-adf5-43bcdd328832"],
-Cell[363789, 7949, 561, 10, 376, "Output",ExpressionUUID->"3a5640c4-c40a-a449-8bce-0d26e4bae388"]
+Cell[362433, 7909, 286, 6, 28, "Input",ExpressionUUID->"f1706719-f988-c747-adf5-43bcdd328832"],
+Cell[362722, 7917, 561, 10, 376, "Output",ExpressionUUID->"3a5640c4-c40a-a449-8bce-0d26e4bae388"]
 }, Open  ]],
-Cell[364365, 7962, 264, 6, 58, "Text",ExpressionUUID->"9347dec2-cb0d-ad41-83b8-82b7023a4e68"],
-Cell[364632, 7970, 1313, 34, 138, "Code",ExpressionUUID->"257a849a-52e7-6a4c-be73-0d9a06890176"],
-Cell[365948, 8006, 322, 7, 58, "Text",ExpressionUUID->"85cb2a65-3b48-7d46-980c-cc64fe8b7e47"],
-Cell[366273, 8015, 2637, 65, 161, "Code",ExpressionUUID->"99b42ff3-daba-e448-97e3-bb186293f452"],
-Cell[368913, 8082, 224, 5, 58, "Text",ExpressionUUID->"54f472db-b618-9848-af3a-1d33ffca81b7"],
+Cell[363298, 7930, 264, 6, 35, "Text",ExpressionUUID->"9347dec2-cb0d-ad41-83b8-82b7023a4e68"],
+Cell[363565, 7938, 1330, 33, 138, "Code",ExpressionUUID->"257a849a-52e7-6a4c-be73-0d9a06890176"],
+Cell[364898, 7973, 322, 7, 35, "Text",ExpressionUUID->"85cb2a65-3b48-7d46-980c-cc64fe8b7e47"],
+Cell[365223, 7982, 2650, 64, 161, "Code",ExpressionUUID->"99b42ff3-daba-e448-97e3-bb186293f452"],
+Cell[367876, 8048, 224, 5, 35, "Text",ExpressionUUID->"54f472db-b618-9848-af3a-1d33ffca81b7"],
 Cell[CellGroupData[{
-Cell[369162, 8091, 332, 7, 48, "Input",ExpressionUUID->"ab0b4ae8-bb3f-1747-a7fe-acb8aaa21e01"],
-Cell[369497, 8100, 175, 2, 32, "Output",ExpressionUUID->"a06e0508-1771-b247-a145-f57e691a06f5"],
-Cell[369675, 8104, 49063, 983, 305, "Output",ExpressionUUID->"5b7a770a-9ca7-3147-b6de-275a311fc8d7"]
-}, Open  ]]
+Cell[368125, 8057, 332, 7, 48, "Input",ExpressionUUID->"ab0b4ae8-bb3f-1747-a7fe-acb8aaa21e01"],
+Cell[368460, 8066, 175, 2, 32, "Output",ExpressionUUID->"a06e0508-1771-b247-a145-f57e691a06f5"],
+Cell[368638, 8070, 49063, 983, 305, "Output",ExpressionUUID->"5b7a770a-9ca7-3147-b6de-275a311fc8d7"]
+}, Open  ]],
+Cell[417716, 9056, 168, 3, 35, "Text",ExpressionUUID->"f709829b-7370-e145-a692-7f1380559fd1"],
+Cell[417887, 9061, 649, 15, 58, "Text",ExpressionUUID->"328bc600-29d5-e548-87fb-fa4dfed3b31b"],
+Cell[418539, 9078, 534, 16, 35, "Text",ExpressionUUID->"32930058-11ad-0448-9e2a-bd94ab51dc25"],
+Cell[419076, 9096, 677, 19, 61, "Text",ExpressionUUID->"5c9cf693-1f04-8c45-b143-9c9db5336e1b"],
+Cell[419756, 9117, 1438, 37, 127, "Text",ExpressionUUID->"55174b32-b354-c54d-bb6b-dbd617b211f6"],
+Cell[421197, 9156, 421, 8, 58, "Text",ExpressionUUID->"1f61d8f1-f208-7f41-8246-4e6315f13445"],
+Cell[421621, 9166, 164, 3, 35, "Text",ExpressionUUID->"1cae33c3-d9c1-8e4d-b29c-e2ea713d0bc6"],
+Cell[421788, 9171, 8984, 238, 407, "Code",ExpressionUUID->"213d087b-ebe1-ef46-8ea5-1ba67be7a135"],
+Cell[430775, 9411, 158, 3, 35, "Text",ExpressionUUID->"d69e52bd-f68a-2342-8f37-114a79d255df"],
+Cell[430936, 9416, 4628, 123, 279, "Code",ExpressionUUID->"d08dd3d1-49ee-fc4b-a611-1bbdcc0cbe7e"],
+Cell[435567, 9541, 619, 18, 58, "Text",ExpressionUUID->"5617f3bb-527f-b642-9182-648a70c525a5"],
+Cell[CellGroupData[{
+Cell[436211, 9563, 727, 18, 48, "Input",ExpressionUUID->"fd3105b5-f812-be48-b877-8b6af42002c8"],
+Cell[436941, 9583, 552, 11, 422, "Output",ExpressionUUID->"121778b7-2bf8-be4a-a425-2fc04513aee4"]
+}, Open  ]],
+Cell[437508, 9597, 280, 6, 35, "Text",ExpressionUUID->"06f0be3e-6770-0647-8594-cdd678f9a198"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[437825, 9608, 168, 3, 45, "Subsubsection",ExpressionUUID->"a24bf174-19fb-7e4d-a4ba-91c3d193862e"],
+Cell[437996, 9613, 502, 9, 81, "Text",ExpressionUUID->"6ab4bfd4-d2c5-2c42-bb8b-ac58a6edc6bb"],
+Cell[438501, 9624, 196, 3, 35, "Text",ExpressionUUID->"3ffcee30-b740-6c47-b4e6-45f2c1ae5323"],
+Cell[438700, 9629, 8986, 238, 407, "Code",ExpressionUUID->"b1be6a29-f97e-7f49-897e-4a99298f7791"],
+Cell[447689, 9869, 175, 3, 35, "Text",ExpressionUUID->"7bdc830d-5fcc-7f44-b61a-f6fdf40fa355"]
 }, Open  ]]
 }, Open  ]]
 }
